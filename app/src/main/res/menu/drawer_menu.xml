@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/grupo_principal" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_plantaciones"
+            android:icon="@drawable/ic_nav_plantacion"
+            android:title="Plantaciones" />
+        <item
+            android:id="@+id/nav_zonas"
+            android:icon="@drawable/ic_nav_zona"
+            android:title="Zonas" />
+        <item
+            android:id="@+id/nav_especies"
+            android:icon="@drawable/ic_nav_especie"
+            android:title="Especies" />
+        <item
+            android:id="@+id/nav_tareas"
+            android:icon="@drawable/ic_nav_tarea"
+            android:title="Tareas" />
+        <item
+            android:id="@+id/nav_reportes"
+            android:icon="@drawable/ic_nav_reporte"
+            android:title="Reportes" />
+    </group>
+
+    <group android:id="@+id/grupo_admin">
+        <item
+            android:id="@+id/nav_usuarios"
+            android:icon="@drawable/ic_nav_usuarios"
+            android:title="Usuarios" />
+        <item
+            android:id="@+id/nav_auditoria"
+            android:icon="@drawable/ic_nav_auditoria"
+            android:title="Auditoría" />
+    </group>
+
+    <group android:id="@+id/grupo_sesion">
+        <item
+            android:id="@+id/nav_cerrar_sesion"
+            android:icon="@drawable/ic_nav_logout"
+            android:title="Cerrar sesión" />
+    </group>
+
+</menu>

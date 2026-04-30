@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=390px, initial-scale=1.0">
+<title>EcoGestión – Login Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .phone {
+    width: 390px;
+    min-height: 844px;
+    background: #FAF7F0;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Status bar */
+  .status-bar {
+    background: #1B5E20;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .status-bar .time { font-size: 14px; font-weight: 700; }
+  .status-icons { display: flex; gap: 6px; align-items: center; font-size: 11px; }
+
+  /* Header verde */
+  .header {
+    background: #2E7D32;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+  }
+
+  .logo-container {
+    width: 88px;
+    height: 88px;
+    margin-bottom: 10px;
+  }
+
+  .logo-container svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .app-name {
+    color: #FFFFFF;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+
+  .app-subtitle {
+    color: #A5D6A7;
+    font-size: 12px;
+    margin-top: 4px;
+    letter-spacing: 0.3px;
+  }
+
+  /* Card login */
+  .card {
+    background: #FFFFFF;
+    margin: -32px 24px 0 24px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    padding: 28px 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #3D3D3D;
+    margin-bottom: 22px;
+  }
+
+  /* Input fields */
+  .input-group {
+    margin-bottom: 16px;
+  }
+
+  .input-wrapper {
+    position: relative;
+    border: 2px solid #E0E0E0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    background: #fff;
+    transition: border-color 0.2s;
+  }
+
+  .input-wrapper:focus-within {
+    border-color: #4CAF50;
+  }
+
+  .input-wrapper:focus-within .input-label {
+    color: #2E7D32;
+    font-size: 11px;
+    top: -10px;
+    background: white;
+    padding: 0 4px;
+  }
+
+  .input-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+
+  .input-label {
+    position: absolute;
+    left: 42px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9E9E9E;
+    font-size: 14px;
+    pointer-events: none;
+    transition: all 0.15s;
+    background: transparent;
+  }
+
+  .input-label.active {
+    color: #2E7D32;
+    font-size: 11px;
+    top: -10px;
+    background: white;
+    padding: 0 4px;
+    transform: none;
+  }
+
+  .input-field {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: #3D3D3D;
+    padding: 16px 0;
+    background: transparent;
+  }
+
+  .eye-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    opacity: 0.5;
+    flex-shrink: 0;
+  }
+
+  /* Botón */
+  .btn-login {
+    width: 100%;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+    margin-top: 8px;
+    text-transform: uppercase;
+    transition: background 0.2s;
+  }
+
+  .btn-login:active {
+    background: #388E3C;
+  }
+
+  /* Versión */
+  .version {
+    text-align: center;
+    color: #9E9E9E;
+    font-size: 11px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  /* Nav bar */
+  .nav-bar {
+    background: #FAF7F0;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 4px;
+    margin-top: auto;
+  }
+
+  .nav-pill {
+    width: 120px;
+    height: 5px;
+    background: #3D3D3D;
+    border-radius: 3px;
+    opacity: 0.3;
+  }
+</style>
+</head>
+<body>
+
+<div class="phone">
+  <!-- Status bar -->
+  <div class="status-bar">
+    <span class="time">9:41</span>
+    <div class="status-icons">
+      <span>●●●</span>
+      <span>WiFi</span>
+      <span>🔋</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo-container">
+      <!-- SVG del logo EcoGestión (basado en el logo original) -->
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <!-- Hoja izquierda -->
+        <path d="M30 70 C10 50 15 25 35 20 C35 40 40 55 30 70Z" fill="#4CAF50"/>
+        <!-- Hoja derecha -->
+        <path d="M70 70 C90 50 85 25 65 20 C65 40 60 55 70 70Z" fill="#4CAF50"/>
+        <!-- Gota de agua / hoja central -->
+        <path d="M50 18 C50 18 35 45 35 58 C35 67 42 74 50 74 C58 74 65 67 65 58 C65 45 50 18 50 18Z" fill="#26C6DA"/>
+        <!-- Línea central hoja -->
+        <line x1="50" y1="30" x2="50" y2="68" stroke="#1B8FA0" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <span class="app-name">EcoGestión</span>
+    <span class="app-subtitle">Ministerio de Ambiente de Córdoba</span>
+  </div>
+
+  <!-- Card -->
+  <div class="card">
+    <div class="card-title">Iniciar sesión</div>
+
+    <!-- Usuario -->
+    <div class="input-group">
+      <div class="input-wrapper">
+        <svg class="input-icon" viewBox="0 0 24 24" fill="none">
+          <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12Z" fill="#4CAF50"/>
+          <path d="M12 14C7.58 14 4 16.69 4 20V21H20V20C20 16.69 16.42 14 12 14Z" fill="#4CAF50"/>
+        </svg>
+        <span class="input-label active">Usuario</span>
+        <input class="input-field" type="text" placeholder="">
+      </div>
+    </div>
+
+    <!-- Contraseña -->
+    <div class="input-group">
+      <div class="input-wrapper">
+        <svg class="input-icon" viewBox="0 0 24 24" fill="none">
+          <path d="M18 8H17V6C17 3.24 14.76 1 12 1C9.24 1 7 3.24 7 6V8H6C4.9 8 4 8.9 4 10V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V10C20 8.9 19.1 8 18 8ZM12 17C10.9 17 10 16.1 10 15C10 13.9 10.9 13 12 13C13.1 13 14 13.9 14 15C14 16.1 13.1 17 12 17ZM15.1 8H8.9V6C8.9 4.29 10.29 2.9 12 2.9C13.71 2.9 15.1 4.29 15.1 6V8Z" fill="#4CAF50"/>
+        </svg>
+        <span class="input-label active">Contraseña</span>
+        <input class="input-field" type="password" placeholder="">
+        <svg class="eye-icon" viewBox="0 0 24 24" fill="none">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12C2.73 16.39 7 19.5 12 19.5C17 19.5 21.27 16.39 23 12C21.27 7.61 17 4.5 12 4.5ZM12 17C9.24 17 7 14.76 7 12C7 9.24 9.24 7 12 7C14.76 7 17 9.24 17 12C17 14.76 14.76 17 12 17ZM12 9C10.34 9 9 10.34 9 12C9 13.66 10.34 15 12 15C13.66 15 15 13.66 15 12C15 10.34 13.66 9 12 9Z" fill="#3D3D3D"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Botón -->
+    <button class="btn-login">Ingresar</button>
+  </div>
+
+  <!-- Versión -->
+  <div class="version">v1.0</div>
+
+  <!-- Nav bar -->
+  <div class="nav-bar">
+    <div class="nav-pill"></div>
+  </div>
+</div>
+
+</body>
+</html>

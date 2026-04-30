@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- EcoGestión -->
+    <color name="green_primary">#4CAF50</color>
+    <color name="green_dark">#2E7D32</color>
+    <color name="green_light">#A5D6A7</color>
+    <color name="teal_accent">#26C6DA</color>
+    <color name="cream_background">#FAF7F0</color>
+
+    <!-- Secretaría de Ambiente y Economía Circular -->
+    <color name="inst_blue">#1A5EA6</color>
+    <color name="inst_blue_dark">#134A88</color>
+    <color name="inst_yellow">#F5A623</color>
+    <color name="inst_red">#BE1E2D</color>
+
+    <!-- Generales -->
+    <color name="carbon_text">#3D3D3D</color>
+    <color name="white">#FFFFFF</color>
+    <color name="gray_hint">#9E9E9E</color>
+    <color name="gray_divider">#E0E0E0</color>
+    <color name="gray_background">#F5F5F5</color>
+    <color name="error_red">#D32F2F</color>
+    <color name="black">#000000</color>
+</resources>

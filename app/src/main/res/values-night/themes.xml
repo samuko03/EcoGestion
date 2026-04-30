@@ -1,0 +1,9 @@
+<resources>
+    <style name="Theme.EcoGestion" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/green_primary</item>
+        <item name="colorPrimaryDark">@color/green_dark</item>
+        <item name="colorAccent">@color/teal_accent</item>
+        <item name="android:windowBackground">@color/cream_background</item>
+        <item name="android:textColorPrimary">@color/carbon_text</item>
+    </style>
+</resources>

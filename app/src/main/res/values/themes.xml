@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.EcoGestion" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/green_primary</item>
+        <item name="colorPrimaryDark">@color/green_dark</item>
+        <item name="colorAccent">@color/teal_accent</item>
+        <item name="android:windowBackground">@color/cream_background</item>
+        <item name="android:textColorPrimary">@color/carbon_text</item>
+    </style>
+
+    <style name="EcoButton" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/green_primary</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+    </style>
+
+    <style name="Theme.EcoGestion.Splash" parent="Theme.EcoGestion">
+        <item name="android:windowBackground">@color/green_dark</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="EcoTextInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/green_primary</item>
+        <item name="hintTextColor">@color/green_dark</item>
+        <item name="boxCornerRadiusTopStart">10dp</item>
+        <item name="boxCornerRadiusTopEnd">10dp</item>
+        <item name="boxCornerRadiusBottomStart">10dp</item>
+        <item name="boxCornerRadiusBottomEnd">10dp</item>
+    </style>
+</resources>
