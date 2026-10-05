@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:background="@color/gray_background">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/inst_blue"
+        app:titleTextColor="@color/white"
+        app:title="Nuevo Usuario"
+        app:navigationIcon="@drawable/ic_arrow_back" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Datos personales -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DATOS PERSONALES"
+                        android:textColor="@color/inst_blue"
+                        android:textSize="12sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:letterSpacing="0.1"
+                        android:layout_marginBottom="12dp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilNombre"
+                        style="@style/EcoTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:hint="Nombre *">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etNombre"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapWords" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilApellido"
+                        style="@style/EcoTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:hint="Apellido *">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etApellido"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapWords" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilEmail"
+                        style="@style/EcoTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Email">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textEmailAddress" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Acceso -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ACCESO AL SISTEMA"
+                        android:textColor="@color/inst_blue"
+                        android:textSize="12sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:letterSpacing="0.1"
+                        android:layout_marginBottom="12dp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilNombreUsuario"
+                        style="@style/EcoTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:hint="Nombre de usuario *">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etNombreUsuario"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textNoSuggestions" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilContrasena"
+                        style="@style/EcoTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:hint="Contraseña *"
+                        app:passwordToggleEnabled="true">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etContrasena"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPassword" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Rol -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rol *"
+                        android:textColor="@color/gray_hint"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="4dp" />
+
+                    <Spinner
+                        android:id="@+id/spinnerRol"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/bg_spinner"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp" />
+
+                    <!-- Activo switch -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Usuario activo"
+                            android:textSize="14sp"
+                            android:textColor="@color/carbon_text" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/switchActivo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGuardarUsuario"
+                style="@style/EcoButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Guardar Usuario" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

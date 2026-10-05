@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +16,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EcoGestion"
         tools:targetApi="31">
+
+        <!-- Clave de Google Maps — reemplazá YOUR_MAPS_API_KEY con tu clave real -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAtAauBHtS-G4sd8T-ectWvZomY1IIy2rc" />
 
         <!-- Splash: launcher principal -->
         <activity
@@ -31,6 +40,58 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+        <activity
+            android:name=".activities.ZonasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.FormZonaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.EspeciesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.FormEspecieActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.UsuariosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.FormUsuarioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.PlantacionesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.FormPlantacionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.TareasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.FormTareaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ReportesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.SeleccionarUbicacionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ReporteGraficoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.AuditoriaActivity"
+            android:exported="false" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
 
     </application>
 

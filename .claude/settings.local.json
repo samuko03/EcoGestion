@@ -5,7 +5,12 @@
       "Bash(git init *)",
       "Bash(git add *)",
       "Bash(git commit *)",
-      "Bash(git config *)"
+      "Bash(git config *)",
+      "Bash(git branch *)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "Bash(dir \"C:\\\\Users\\\\Usuario\\\\App EcoGestion\\\\app\\\\src\\\\main\\\\res\\\\xml\")",
+      "Bash(dir \"C:\\\\Users\\\\Usuario\\\\App EcoGestion\\\\app\\\\src\\\\main\\\\java\\\\com\\\\ecogestion\\\\app\\\\activities\\\\\" /b && echo \"---\" && dir \"C:\\\\Users\\\\Usuario\\\\App EcoGestion\\\\app\\\\src\\\\main\\\\java\\\\com\\\\ecogestion\\\\app\\\\utils\\\\\" /b)"
     ]
   }
 }

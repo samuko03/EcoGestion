@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.ecogestion.app.MainActivity;
 import com.ecogestion.app.R;
+import com.ecogestion.app.database.DatabaseHelper;
+import com.ecogestion.app.utils.DataSeeder;
 import com.ecogestion.app.utils.SessionManager;
 
 public class SplashActivity extends AppCompatActivity {
@@ -19,6 +21,10 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+        // Sembrar datos de prueba en background (solo si la BD está vacía)
+        new Thread(() -> DataSeeder.sembrarSiEsNecesario(
+                DatabaseHelper.getInstance(getApplicationContext()))).start();
 
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
             SessionManager session = new SessionManager(this);

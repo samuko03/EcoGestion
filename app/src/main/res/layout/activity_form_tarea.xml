@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:background="@color/gray_background">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/inst_blue"
+        app:titleTextColor="@color/white"
+        app:title="Nueva Tarea"
+        app:navigationIcon="@drawable/ic_arrow_back" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Detalle de la tarea -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DETALLE DE LA TAREA"
+                        android:textColor="@color/inst_blue"
+                        android:textSize="12sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:letterSpacing="0.1"
+                        android:layout_marginBottom="12dp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilTitulo"
+                        style="@style/EcoTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:hint="Título de la tarea *">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etTitulo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapSentences" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilDescripcion"
+                        style="@style/EcoTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:hint="Descripción">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etDescripcion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            android:minLines="2"
+                            android:gravity="top" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Tipo -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tipo *"
+                        android:textColor="@color/gray_hint"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="4dp" />
+
+                    <Spinner
+                        android:id="@+id/spinnerTipo"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/bg_spinner"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp" />
+
+                    <!-- Prioridad -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Prioridad *"
+                        android:textColor="@color/gray_hint"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="4dp" />
+
+                    <Spinner
+                        android:id="@+id/spinnerPrioridad"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/bg_spinner"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Asignación -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ASIGNACIÓN"
+                        android:textColor="@color/inst_blue"
+                        android:textSize="12sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:letterSpacing="0.1"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- Estado -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Estado *"
+                        android:textColor="@color/gray_hint"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="4dp" />
+
+                    <Spinner
+                        android:id="@+id/spinnerEstado"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/bg_spinner"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp" />
+
+                    <!-- Zona -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Zona"
+                        android:textColor="@color/gray_hint"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="4dp" />
+
+                    <Spinner
+                        android:id="@+id/spinnerZona"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/bg_spinner"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp" />
+
+                    <!-- Plantación -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Plantación"
+                        android:textColor="@color/gray_hint"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="4dp" />
+
+                    <Spinner
+                        android:id="@+id/spinnerPlantacion"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/bg_spinner"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp" />
+
+                    <!-- Responsable -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Asignar a"
+                        android:textColor="@color/gray_hint"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="4dp" />
+
+                    <Spinner
+                        android:id="@+id/spinnerAsignado"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/bg_spinner"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp" />
+
+                    <!-- Fechas -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilFechaInicio"
+                        style="@style/EcoTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:hint="Fecha de inicio (dd/mm/aaaa)">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etFechaInicio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            android:focusable="false"
+                            android:clickable="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilFechaLimite"
+                        style="@style/EcoTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:hint="Fecha límite (dd/mm/aaaa)">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etFechaLimite"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            android:focusable="false"
+                            android:clickable="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilObservaciones"
+                        style="@style/EcoTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Observaciones">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etObservaciones"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            android:minLines="2"
+                            android:gravity="top" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGuardarTarea"
+                style="@style/EcoButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Guardar Tarea" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

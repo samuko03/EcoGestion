@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="@color/gray_background">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/inst_blue"
+        app:titleTextColor="@color/white"
+        app:title="Auditoría"
+        app:navigationIcon="@drawable/ic_arrow_back" />
+
+    <!-- Filtro por categoría -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:background="@color/white"
+        android:elevation="2dp">
+
+        <LinearLayout
+            android:id="@+id/layoutFiltros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnFiltroTodos"
+                style="@style/EcoButton"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="6dp"
+                android:text="Todos"
+                android:textSize="12sp"
+                android:minHeight="0dp"
+                android:minWidth="0dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnFiltroCrear"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="6dp"
+                android:text="✚ Creaciones"
+                android:textColor="@color/green_primary"
+                android:textSize="12sp"
+                android:minHeight="0dp"
+                android:minWidth="0dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnFiltroModificar"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="6dp"
+                android:text="✎ Ediciones"
+                android:textColor="@color/inst_blue"
+                android:textSize="12sp"
+                android:minHeight="0dp"
+                android:minWidth="0dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnFiltroEliminar"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="6dp"
+                android:text="✖ Eliminaciones"
+                android:textColor="#E53935"
+                android:textSize="12sp"
+                android:minHeight="0dp"
+                android:minWidth="0dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnFiltroSistema"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="⚙ Sistema"
+                android:textColor="@color/gray_hint"
+                android:textSize="12sp"
+                android:minHeight="0dp"
+                android:minWidth="0dp" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Barra de búsqueda -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="8dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:hint="Buscar por usuario, acción o detalle…">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etBusqueda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:imeOptions="actionSearch"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <!-- Info de total -->
+    <TextView
+        android:id="@+id/tvTotalRegistros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="4dp"
+        android:text=""
+        android:textSize="12sp"
+        android:textColor="@color/gray_hint" />
+
+    <!-- Lista vacía -->
+    <LinearLayout
+        android:id="@+id/layoutVacio"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📋"
+            android:textSize="48sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Sin registros de auditoría"
+            android:textColor="@color/gray_hint"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerAuditoria"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="6dp"
+        android:paddingBottom="16dp"
+        android:clipToPadding="false" />
+
+</LinearLayout>

@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:background="@color/gray_background">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/inst_blue"
+        app:titleTextColor="@color/white"
+        app:title="Nueva Plantación"
+        app:navigationIcon="@drawable/ic_arrow_back" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Información general -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="INFORMACIÓN GENERAL"
+                        android:textColor="@color/inst_blue"
+                        android:textSize="12sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:letterSpacing="0.1"
+                        android:layout_marginBottom="12dp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilNombre"
+                        style="@style/EcoTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:hint="Nombre de la plantación *">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etNombre"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapSentences" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Zona -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Zona *"
+                        android:textColor="@color/gray_hint"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="4dp" />
+
+                    <Spinner
+                        android:id="@+id/spinnerZona"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/bg_spinner"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp" />
+
+                    <!-- Especie -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Especie *"
+                        android:textColor="@color/gray_hint"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="4dp" />
+
+                    <Spinner
+                        android:id="@+id/spinnerEspecie"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/bg_spinner"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilCantidad"
+                        style="@style/EcoTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:hint="Cantidad de árboles *">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etCantidad"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilFecha"
+                        style="@style/EcoTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Fecha de plantación (dd/mm/aaaa)">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etFecha"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            android:focusable="false"
+                            android:clickable="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Ubicación en mapa -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="UBICACIÓN"
+                        android:textColor="@color/inst_blue"
+                        android:textSize="12sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:letterSpacing="0.1"
+                        android:layout_marginBottom="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_location"
+                            android:layout_marginEnd="8dp"
+                            android:contentDescription="Ubicación" />
+
+                        <TextView
+                            android:id="@+id/tvUbicacion"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Sin ubicación seleccionada"
+                            android:textColor="@color/gray_hint"
+                            android:textSize="13sp"
+                            android:fontFamily="monospace" />
+
+                    </LinearLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSeleccionarUbicacion"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Seleccionar en mapa"
+                        app:strokeColor="@color/green_dark"
+                        app:strokeWidth="1dp"
+                        android:textColor="@color/green_dark"
+                        app:icon="@drawable/ic_location"
+                        app:iconTint="@color/green_dark" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Organización -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ORGANIZACIÓN"
+                        android:textColor="@color/inst_blue"
+                        android:textSize="12sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:letterSpacing="0.1"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- Estado -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Estado *"
+                        android:textColor="@color/gray_hint"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="4dp" />
+
+                    <Spinner
+                        android:id="@+id/spinnerEstado"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/bg_spinner"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp" />
+
+                    <!-- Responsable -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Responsable"
+                        android:textColor="@color/gray_hint"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="4dp" />
+
+                    <Spinner
+                        android:id="@+id/spinnerResponsable"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/bg_spinner"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilObservaciones"
+                        style="@style/EcoTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Observaciones">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etObservaciones"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            android:minLines="2"
+                            android:gravity="top" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGuardarPlantacion"
+                style="@style/EcoButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Guardar Plantación" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

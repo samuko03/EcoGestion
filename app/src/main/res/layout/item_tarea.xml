@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="3dp"
+    app:cardBackgroundColor="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Fila superior: título + chip prioridad -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/txtTituloTarea"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Riego Zona Norte"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/carbon_text" />
+
+            <TextView
+                android:id="@+id/txtPrioridadChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ALTA"
+                android:textSize="10sp"
+                android:fontFamily="sans-serif-medium"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:textColor="@color/white"
+                android:background="@drawable/bg_prioridad_alta"
+                android:layout_marginStart="8dp" />
+
+        </LinearLayout>
+
+        <!-- Segunda fila: tipo + chip estado -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="6dp">
+
+            <TextView
+                android:id="@+id/txtTipoTarea"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="RIEGO"
+                android:textSize="11sp"
+                android:textColor="@color/gray_hint" />
+
+            <TextView
+                android:id="@+id/txtEstadoChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PENDIENTE"
+                android:textSize="10sp"
+                android:fontFamily="sans-serif-medium"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:textColor="@color/white"
+                android:background="@drawable/bg_estado_pendiente" />
+
+        </LinearLayout>
+
+        <!-- Zona / Plantación -->
+        <TextView
+            android:id="@+id/txtZonaTarea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Zona: Norte"
+            android:textSize="12sp"
+            android:textColor="@color/gray_hint" />
+
+        <TextView
+            android:id="@+id/txtPlantacionTarea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Plantación: Lote A"
+            android:textSize="12sp"
+            android:textColor="@color/gray_hint" />
+
+        <!-- Asignado + fecha límite -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp">
+
+            <TextView
+                android:id="@+id/txtAsignadoTarea"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Asignado: Juan Pérez"
+                android:textSize="12sp"
+                android:textColor="@color/gray_hint" />
+
+            <TextView
+                android:id="@+id/txtFechaTarea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Límite: 20/03/2025"
+                android:textSize="12sp"
+                android:textColor="@color/gray_hint" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/gray_divider" />
+
+        <!-- Botones -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEditarTarea"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Editar"
+                android:textColor="@color/inst_blue"
+                app:icon="@drawable/ic_edit"
+                app:iconTint="@color/inst_blue" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEliminarTarea"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Eliminar"
+                android:textColor="@color/error_red"
+                app:icon="@drawable/ic_delete"
+                app:iconTint="@color/error_red" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

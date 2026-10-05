@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:background="@color/gray_background">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/inst_blue"
+        app:titleTextColor="@color/white"
+        app:title="Nueva Zona"
+        app:navigationIcon="@drawable/ic_arrow_back" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DATOS DE LA ZONA"
+                        android:textColor="@color/inst_blue"
+                        android:textSize="12sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:letterSpacing="0.1"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- Nombre -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilNombre"
+                        style="@style/EcoTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:hint="Nombre de la zona *">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etNombre"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapWords" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Departamento -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilDepartamento"
+                        style="@style/EcoTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:hint="Departamento *">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etDepartamento"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapWords" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Localidad -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilLocalidad"
+                        style="@style/EcoTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:hint="Localidad *">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etLocalidad"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapWords" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Estado -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Estado *"
+                        android:textColor="@color/gray_hint"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="4dp" />
+
+                    <Spinner
+                        android:id="@+id/spinnerEstado"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/bg_spinner"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card coordenadas -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="COORDENADAS (opcional)"
+                        android:textColor="@color/inst_blue"
+                        android:textSize="12sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:letterSpacing="0.1"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- Botón seleccionar en mapa -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSeleccionarUbicacion"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:text="Seleccionar en mapa"
+                        android:textColor="@color/green_dark"
+                        app:strokeColor="@color/green_dark"
+                        app:strokeWidth="1dp"
+                        app:icon="@drawable/ic_location"
+                        app:iconTint="@color/green_dark" />
+
+                    <!-- Latitud -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilLatitud"
+                        style="@style/EcoTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:hint="Latitud">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etLatitud"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal|numberSigned" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Longitud -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilLongitud"
+                        style="@style/EcoTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Longitud">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etLongitud"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal|numberSigned" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Botón guardar -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGuardarZona"
+                style="@style/EcoButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Guardar Zona" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

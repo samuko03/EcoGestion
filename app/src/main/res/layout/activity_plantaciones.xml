@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/gray_background">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/inst_blue"
+            app:titleTextColor="@color/white"
+            app:title="Plantaciones"
+            app:navigationIcon="@drawable/ic_arrow_back" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Contenido principal: filtros + lista -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!-- Panel de filtros -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp"
+            app:cardBackgroundColor="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <!-- Encabezado del panel -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="🔍  Filtros"
+                        android:textSize="14sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="@color/carbon_text" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnLimpiarFiltros"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Limpiar"
+                        android:textSize="12sp"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        app:iconSize="14dp"
+                        android:minHeight="0dp"
+                        android:minWidth="0dp" />
+                </LinearLayout>
+
+                <!-- Fila: Zona + Especie -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <Spinner
+                        android:id="@+id/spinnerZona"
+                        android:layout_width="0dp"
+                        android:layout_height="42dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/spinner_background"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="4dp" />
+
+                    <Spinner
+                        android:id="@+id/spinnerEspecie"
+                        android:layout_width="0dp"
+                        android:layout_height="42dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/spinner_background"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="4dp" />
+                </LinearLayout>
+
+                <!-- Fila: Fecha Desde + Fecha Hasta -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnFechaDesde"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="42dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="6dp"
+                        android:text="Desde"
+                        android:textSize="12sp"
+                        app:iconSize="14dp"
+                        android:minHeight="0dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnFechaHasta"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="42dp"
+                        android:layout_weight="1"
+                        android:text="Hasta"
+                        android:textSize="12sp"
+                        app:iconSize="14dp"
+                        android:minHeight="0dp" />
+                </LinearLayout>
+
+                <!-- Botón Filtrar -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnFiltrar"
+                    style="@style/EcoButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Aplicar filtros" />
+
+                <!-- Separador -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@color/gray_background" />
+
+                <!-- Fila exportar -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnExportarPdf"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="6dp"
+                        android:text="📄 PDF"
+                        android:textSize="12sp"
+                        android:minHeight="0dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnExportarExcel"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_weight="1"
+                        android:text="📊 Excel"
+                        android:textSize="12sp"
+                        android:minHeight="0dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Info de resultados -->
+        <TextView
+            android:id="@+id/tvResultados"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="4dp"
+            android:textSize="12sp"
+            android:textColor="@color/gray_hint"
+            android:text="" />
+
+        <!-- Estado vacío -->
+        <LinearLayout
+            android:id="@+id/layoutVacio"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_nav_plantacion"
+                android:alpha="0.3" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="No hay plantaciones registradas"
+                android:textColor="@color/gray_hint"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/tvVacioSub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text=""
+                android:textColor="@color/gray_hint"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- Lista -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerPlantaciones"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:clipToPadding="false" />
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAgregarPlantacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@android:drawable/ic_input_add"
+        app:backgroundTint="@color/inst_blue" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
